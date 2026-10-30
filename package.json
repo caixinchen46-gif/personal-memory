@@ -1,0 +1,21 @@
+{
+  "name": "personal-memory",
+  "version": "0.1.0",
+  "description": "Local personal memory with source validation, scoped retrieval and Codex chat hooks",
+  "license": "MIT",
+  "engines": { "node": ">=24" },
+  "repository": { "type": "git", "url": "https://github.com/caixinchen46-gif/personal-memory.git" },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "build": "tsc",
+    "check": "tsc --noEmit",
+    "test": "tsx scripts/test-memory.mts && tsx scripts/test-memory-storage.mts && tsx scripts/test-memory-chat.mts && tsx scripts/test-standalone.mts",
+    "test:standalone": "tsx scripts/test-standalone.mts",
+    "prepare:chat": "tsx scripts/prepare-memory-chat.mts",
+    "migrate": "tsx scripts/migrate-memory.mts"
+  },
+  "dependencies": { "express": "4.22.3", "sql.js": "1.15.0" },
+  "devDependencies": { "tsx": "4.23.15", "typescript": "5.9.3", "@types/node": "22.20.5", "@types/express": "4.17.25", "@types/sql.js": "1.4.11" }
+}
